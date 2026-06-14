@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>此间微光</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- 导航栏 -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo" id="nav-logo">✦ 此间微光</a>
+      <div class="nav-menu" id="navMenu">
+        <a href="#home" class="nav-link active" data-section="home">首页</a>
+        <a href="#growth" class="nav-link" data-section="growth">成长</a>
+        <a href="#family" class="nav-link" data-section="family">家庭</a>
+        <a href="#movies" class="nav-link" data-section="movies">电影</a>
+        <a href="#books" class="nav-link" data-section="books">书籍</a>
+        <a href="#diary" class="nav-link" data-section="diary">日记</a>
+      </div>
+      <div class="nav-right">
+        <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌙</button>
+        <button class="menu-toggle" id="menuToggle" aria-label="菜单">☰</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============ 首页 ============ -->
+  <section class="section active" id="section-home">
+    <div class="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-content">
+        <div class="hero-avatar" id="heroAvatar">
+          <div class="avatar-placeholder">✨</div>
+        </div>
+        <h1 class="hero-greeting" id="heroGreeting">你好，欢迎来到我的小站 🌟</h1>
+        <p class="hero-name" id="heroName"></p>
+        <p class="hero-bio" id="heroBio"></p>
+        <div class="hero-info" id="heroInfo"></div>
+        <div class="hero-social" id="heroSocial"></div>
+      </div>
+      <div class="scroll-indicator">↓ 向下滚动探索</div>
+    </div>
+  </section>
+
+  <!-- ============ 成长经历 ============ -->
+  <section class="section" id="section-growth">
+    <div class="container">
+      <h2 class="section-title">🌱 成长经历</h2>
+      <p class="section-desc" id="aboutMe"></p>
+      <div class="timeline" id="timeline"></div>
+    </div>
+  </section>
+
+  <!-- ============ 家庭 ============ -->
+  <section class="section" id="section-family">
+    <div class="container">
+      <h2 class="section-title">🏠 我的家庭</h2>
+      <p class="section-desc">家人是我最坚实的后盾，也是我前进的动力。</p>
+      <div class="family-grid" id="familyGrid"></div>
+    </div>
+  </section>
+
+  <!-- ============ 电影 ============ -->
+  <section class="section" id="section-movies">
+    <div class="container">
+      <h2 class="section-title">🎬 我喜欢的电影</h2>
+      <p class="section-desc">电影是人生的缩影，每一部好电影都是一次心灵的旅行。</p>
+      <div class="card-grid" id="moviesGrid"></div>
+    </div>
+  </section>
+
+  <!-- ============ 书籍 ============ -->
+  <section class="section" id="section-books">
+    <div class="container">
+      <h2 class="section-title">📚 我喜欢的书籍</h2>
+      <p class="section-desc">书中自有黄金屋，每一本书都是一个新世界。</p>
+      <div class="card-grid" id="booksGrid"></div>
+    </div>
+  </section>
+
+  <!-- ============ 日记 ============ -->
+  <section class="section" id="section-diary">
+    <div class="container">
+      <h2 class="section-title">📝 我的日记</h2>
+      <p class="section-desc">记录生活，记录思考，记录成长。</p>
+      <div class="diary-controls">
+        <div class="diary-search">
+          <input type="text" id="diarySearch" placeholder="搜索日记...">
+        </div>
+        <div class="diary-tags" id="diaryTags"></div>
+      </div>
+      <div class="diary-list" id="diaryList"></div>
+    </div>
+  </section>
+
+  <!-- 页脚 -->
+  <footer class="footer">
+    <div class="container">
+      <p>© <span id="footerYear">2026</span> · 用 ❤️ 和 ☕ 制作</p>
+      <p class="footer-small">记录生活，不负时光</p>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button class="back-to-top" id="backToTop" aria-label="回到顶部">↑</button>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>
+
