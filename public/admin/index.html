@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>管理后台</title>
+  <link rel="stylesheet" href="/admin/css/admin.css">
+</head>
+<body>
+  <!-- 登录界面 -->
+  <div class="login-screen" id="loginScreen">
+    <div class="login-box">
+      <h1>🔐 管理后台</h1>
+      <p class="login-desc">请输入密码以管理内容</p>
+      <div class="login-form">
+        <input type="password" id="loginPassword" placeholder="输入密码" autocomplete="current-password">
+        <button id="loginBtn">登录</button>
+      </div>
+      <p class="login-error" id="loginError"></p>
+    </div>
+  </div>
+
+  <!-- 管理界面 -->
+  <div class="admin-app" id="adminApp" style="display:none;">
+    <header class="admin-header">
+      <h1>📝 内容管理</h1>
+      <div class="admin-header-right">
+        <a href="/" target="_blank" class="btn btn-outline">查看网站</a>
+        <button id="logoutBtn" class="btn btn-outline">退出</button>
+      </div>
+    </header>
+
+    <div class="admin-tabs">
+      <button class="tab-btn active" data-tab="diary">📖 日记</button>
+      <button class="tab-btn" data-tab="profile">👤 个人资料</button>
+      <button class="tab-btn" data-tab="family">🏠 家庭</button>
+      <button class="tab-btn" data-tab="movies">🎬 电影</button>
+      <button class="tab-btn" data-tab="books">📚 书籍</button>
+    </div>
+
+    <div class="admin-content">
+      <!-- 日记管理 -->
+      <div class="tab-panel active" id="tab-diary">
+        <div class="panel-header">
+          <h2>📖 日记管理</h2>
+          <button class="btn btn-primary" id="newDiaryBtn">+ 写新日记</button>
+        </div>
+        <div class="diary-form" id="diaryForm" style="display:none;">
+          <h3>发布新日记</h3>
+          <input type="text" id="diaryTitle" placeholder="日记标题" class="form-input">
+          <textarea id="diaryContent" placeholder="写点什么..." rows="8" class="form-input"></textarea>
+          <div class="form-row">
+            <input type="date" id="diaryDate" class="form-input form-input-sm">
+            <input type="text" id="diaryTags" placeholder="标签，用逗号分隔" class="form-input form-input-sm">
+          </div>
+          <div class="form-actions">
+            <button class="btn btn-primary" id="saveDiaryBtn">发布</button>
+            <button class="btn btn-outline" id="cancelDiaryBtn">取消</button>
+          </div>
+        </div>
+        <div class="item-list" id="diaryList"></div>
+      </div>
+
+      <!-- 个人资料 -->
+      <div class="tab-panel" id="tab-profile">
+        <h2>👤 个人资料</h2>
+        <div class="profile-form">
+          <div class="form-group">
+            <label>姓名</label>
+            <input type="text" id="pfName" class="form-input">
+          </div>
+          <div class="form-group">
+            <label>欢迎语</label>
+            <input type="text" id="pfGreeting" class="form-input">
+          </div>
+          <div class="form-group">
+            <label>简介</label>
+            <textarea id="pfBio" rows="3" class="form-input"></textarea>
+          </div>
+          <div class="form-group">
+            <label>关于我</label>
+            <textarea id="pfAbout" rows="4" class="form-input"></textarea>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>位置</label>
+              <input type="text" id="pfLocation" class="form-input">
+            </div>
+            <div class="form-group">
+              <label>职业</label>
+              <input type="text" id="pfOccupation" class="form-input">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>邮箱</label>
+            <input type="email" id="pfEmail" class="form-input">
+          </div>
+          <div class="form-group">
+            <label>管理密码</label>
+            <input type="password" id="pfPassword" class="form-input" placeholder="留空则使用默认密码 admin123">
+          </div>
+          <div class="form-actions">
+            <button class="btn btn-primary" id="saveProfileBtn">保存资料</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 家庭管理 -->
+      <div class="tab-panel" id="tab-family">
+        <div class="panel-header">
+          <h2>🏠 家庭管理</h2>
+          <button class="btn btn-primary" id="addFamilyBtn">+ 添加成员</button>
+        </div>
+        <div class="item-list" id="familyList"></div>
+      </div>
+
+      <!-- 电影管理 -->
+      <div class="tab-panel" id="tab-movies">
+        <div class="panel-header">
+          <h2>🎬 电影管理</h2>
+          <button class="btn btn-primary" id="addMovieBtn">+ 添加电影</button>
+        </div>
+        <div class="item-list" id="moviesList"></div>
+      </div>
+
+      <!-- 书籍管理 -->
+      <div class="tab-panel" id="tab-books">
+        <div class="panel-header">
+          <h2>📚 书籍管理</h2>
+          <button class="btn btn-primary" id="addBookBtn">+ 添加书籍</button>
+        </div>
+        <div class="item-list" id="booksList"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/admin/js/admin.js"></script>
+</body>
+</html>
